@@ -4,10 +4,10 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 @RequiredArgsConstructor
 public class TraverseStepConfirmationDialog {

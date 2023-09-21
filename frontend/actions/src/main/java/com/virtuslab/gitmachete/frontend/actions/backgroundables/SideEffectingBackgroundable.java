@@ -3,8 +3,8 @@ package com.virtuslab.gitmachete.frontend.actions.backgroundables;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
-import lombok.val;
 import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+import lombok.val;
 
 import com.virtuslab.gitmachete.frontend.actions.common.SideEffectingActionTrackingService;
 import com.virtuslab.qual.guieffect.UIThreadUnsafe;

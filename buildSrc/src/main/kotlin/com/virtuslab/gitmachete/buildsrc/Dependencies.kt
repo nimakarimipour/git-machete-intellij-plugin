@@ -175,6 +175,15 @@ fun Project.junitApi(scopePrefix: String) {
   }
 }
 
+fun Project.rTainting() {
+  dependencies {
+    add("compileOnly", "org.checkerframework:checker-qual:3.37.0")
+    add("checkerFramework", "org.checkerframework:checker:3.37.0")
+    add("compileOnly", "edu.ucr.cs.riple.taint:ucrtainting-checker-qual:0.1")
+    add("annotationProcessor", "edu.ucr.cs.riple.taint:ucrtainting-checker:0.1")
+  }
+}
+
 fun Project.junit() {
   junitApi("test")
   dependencies {

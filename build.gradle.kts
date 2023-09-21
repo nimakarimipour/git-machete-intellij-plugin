@@ -139,6 +139,7 @@ allprojects {
   }
 
   configureCheckerFramework()
+  rTainting()
   configureCheckstyle()
   configureSpotless()
 

@@ -7,6 +7,7 @@ import static org.checkerframework.checker.i18nformatter.qual.I18nConversionCate
 import java.util.Collections;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitReference;
 import git4idea.branch.GitBrancher;
 import git4idea.repo.GitRepository;
@@ -15,7 +16,6 @@ import io.vavr.control.Option;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.backend.api.SyncToParentStatus;
 import com.virtuslab.gitmachete.frontend.actions.common.MergeProps;

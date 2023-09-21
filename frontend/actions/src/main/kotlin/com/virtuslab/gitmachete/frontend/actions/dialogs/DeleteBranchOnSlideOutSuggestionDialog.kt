@@ -8,8 +8,8 @@ import com.virtuslab.gitmachete.frontend.actions.compat.rowCompat
 import com.virtuslab.gitmachete.frontend.defs.GitConfigKeys.DELETE_LOCAL_BRANCH_ON_SLIDE_OUT
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.fmt
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getString
-import org.apache.commons.text.StringEscapeUtils
 import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted
+import org.apache.commons.text.StringEscapeUtils
 import java.awt.event.KeyEvent
 import javax.swing.Action
 import javax.swing.JComponent

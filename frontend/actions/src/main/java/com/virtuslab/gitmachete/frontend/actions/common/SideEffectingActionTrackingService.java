@@ -1,12 +1,12 @@
 package com.virtuslab.gitmachete.frontend.actions.common;
 
 import com.intellij.openapi.project.Project;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import io.vavr.collection.HashSet;
 import io.vavr.collection.Set;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 @SuppressWarnings("regexp") // to allow for `synchronized`
 public final class SideEffectingActionTrackingService {

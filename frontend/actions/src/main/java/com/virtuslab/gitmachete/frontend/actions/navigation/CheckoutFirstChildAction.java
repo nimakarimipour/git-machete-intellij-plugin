@@ -3,12 +3,12 @@ package com.virtuslab.gitmachete.frontend.actions.navigation;
 import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getNonHtmlString;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import kr.pe.kwonnam.slf4jlambda.LambdaLogger;
 import lombok.CustomLog;
 import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.frontend.actions.base.BaseCheckoutAction;
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName;

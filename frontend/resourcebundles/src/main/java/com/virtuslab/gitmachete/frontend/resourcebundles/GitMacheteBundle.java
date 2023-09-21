@@ -3,11 +3,11 @@ package com.virtuslab.gitmachete.frontend.resourcebundles;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormatFor;
 import org.checkerframework.checker.i18nformatter.qual.I18nMakeFormat;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.PolyTainted;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.checkerframework.common.value.qual.MinLen;
 import org.jetbrains.annotations.PropertyKey;
 
@@ -31,7 +31,7 @@ public final class GitMacheteBundle {
    *             but each parameter must be a non-null {@link String} and not just a nullable {@link Object}
    * @return the formatted string
    */
-  public static @PolyTainted String fmt(@PolyTainted @I18nFormatFor("#2") String format, String @MinLen(1)... args) {
+  public static @RPolyTainted String fmt(@RPolyTainted @I18nFormatFor("#2") String format, String @MinLen(1)... args) {
     return MessageFormat.format(format, (@Nullable Object[]) args);
   }
 

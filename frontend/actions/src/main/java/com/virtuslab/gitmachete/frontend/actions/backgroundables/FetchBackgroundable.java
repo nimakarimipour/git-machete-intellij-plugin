@@ -2,6 +2,7 @@ package com.virtuslab.gitmachete.frontend.actions.backgroundables;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.VcsNotifier;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitUtil;
 import git4idea.fetch.GitFetchSupport;
 import git4idea.repo.GitRemote;
@@ -10,7 +11,6 @@ import lombok.CustomLog;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.qual.guieffect.UIThreadUnsafe;
 

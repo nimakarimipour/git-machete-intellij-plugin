@@ -5,12 +5,12 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 import java.util.Collections;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.branch.GitBrancher;
 import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName;
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle;

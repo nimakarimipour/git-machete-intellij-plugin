@@ -2,6 +2,7 @@ package com.virtuslab.gitmachete.frontend.actions.backgroundables;
 
 import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getNonHtmlString;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.commands.GitCommand;
 import git4idea.commands.GitLineHandler;
 import git4idea.repo.GitRepository;
@@ -10,7 +11,6 @@ import lombok.CustomLog;
 import lombok.val;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.backend.api.IBranchReference;
 import com.virtuslab.qual.guieffect.UIThreadUnsafe;
