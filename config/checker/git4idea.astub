@@ -3,14 +3,14 @@ import org.checkerframework.checker.guieffect.qual.PolyUIEffect;
 import org.checkerframework.checker.guieffect.qual.PolyUIType;
 import org.checkerframework.checker.guieffect.qual.UI;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Tainted;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 package git4idea;
 
 class GitVcs {
-  void showErrors(List list, @Tainted String action);
+  void showErrors(List list, @RTainted String action);
 }
 
 
@@ -23,7 +23,7 @@ interface GitBrancher {
 }
 
 class GitNewBranchDialog {
-  GitNewBranchDialog(Project project, Collection repositories, @Untainted String dialogTitle, String initialName,
+  GitNewBranchDialog(Project project, Collection repositories, @RUntainted String dialogTitle, String initialName,
                      boolean showCheckOutOption, boolean showResetOption, boolean showSetTrackingOption);
 }
 
@@ -31,7 +31,7 @@ class GitNewBranchDialog {
 package git4idea.fetch;
 
 interface GitFetchResult {
-  boolean showNotificationIfFailed(@Untainted String title);
+  boolean showNotificationIfFailed(@RUntainted String title);
 }
 
 
@@ -48,5 +48,5 @@ package git4idea.util;
 
 class GitUntrackedFilesHelper {
   static void notifyUntrackedFilesOverwrittenBy(Project project, VirtualFile root, Collection<String> relativePaths,
-                                                @Untainted String operation, @Tainted @Nullable String description);
+                                                @RUntainted String operation, @RTainted @Nullable String description);
 }

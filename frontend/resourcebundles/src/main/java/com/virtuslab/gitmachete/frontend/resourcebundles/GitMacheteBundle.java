@@ -7,7 +7,7 @@ import org.checkerframework.checker.i18nformatter.qual.I18nFormatFor;
 import org.checkerframework.checker.i18nformatter.qual.I18nMakeFormat;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.checkerframework.checker.tainting.qual.PolyTainted;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.checkerframework.common.value.qual.MinLen;
 import org.jetbrains.annotations.PropertyKey;
 
@@ -41,7 +41,7 @@ public final class GitMacheteBundle {
   }
 
   @I18nMakeFormat
-  public static @Untainted String getNonHtmlString(@PropertyKey(resourceBundle = BUNDLE) String key) {
+  public static @RUntainted String getNonHtmlString(@PropertyKey(resourceBundle = BUNDLE) String key) {
     return instance.getString(key);
   }
 }

@@ -10,7 +10,7 @@ import lombok.CustomLog;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.qual.guieffect.UIThreadUnsafe;
 
@@ -20,7 +20,7 @@ public class FetchBackgroundable extends SideEffectingBackgroundable {
   private final GitRepository gitRepository;
   private final String remoteName;
   private final @Nullable String refspec;
-  private final @Untainted String failureNotificationText;
+  private final @RUntainted String failureNotificationText;
   private final String successNotificationText;
 
   /** Use as {@code remoteName} when referring to the local repository. */
@@ -30,8 +30,8 @@ public class FetchBackgroundable extends SideEffectingBackgroundable {
       GitRepository gitRepository,
       String remoteName,
       @Nullable String refspec,
-      @Untainted String taskTitle,
-      @Untainted String failureNotificationText,
+      @RUntainted String taskTitle,
+      @RUntainted String failureNotificationText,
       String successNotificationText) {
     super(gitRepository.getProject(), taskTitle, "fetch");
     this.gitRepository = gitRepository;

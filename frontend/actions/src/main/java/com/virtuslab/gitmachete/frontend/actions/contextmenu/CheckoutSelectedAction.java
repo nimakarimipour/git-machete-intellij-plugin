@@ -7,7 +7,7 @@ import kr.pe.kwonnam.slf4jlambda.LambdaLogger;
 import lombok.CustomLog;
 import lombok.experimental.ExtensionMethod;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.frontend.actions.base.BaseCheckoutAction;
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName;
@@ -31,7 +31,7 @@ public class CheckoutSelectedAction extends BaseCheckoutAction
   }
 
   @Override
-  protected @Untainted String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
+  protected @RUntainted String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
     return getNonHtmlString("action.GitMachete.CheckoutSelectedAction.undefined.branch-name");
   }
 }

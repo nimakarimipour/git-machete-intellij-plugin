@@ -11,7 +11,7 @@ import io.vavr.collection.List;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.backend.api.SyncToRemoteStatus;
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeyGitMacheteRepository;
@@ -26,7 +26,7 @@ public interface ISyncToRemoteStatusDependentAction extends IBranchNameProvider,
   }
 
   @I18nFormat({GENERAL, GENERAL})
-  default @Untainted String getEnabledDescriptionFormat() {
+  default @RUntainted String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.ISyncToRemoteStatusDependentAction.description.enabled");
   }
 

@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.frontend.actions.backgroundables.OverrideForkPointBackgroundable;
 import com.virtuslab.gitmachete.frontend.actions.dialogs.OverrideForkPointDialog;
@@ -32,7 +32,7 @@ public abstract class BaseOverrideForkPointAction extends BaseGitMacheteReposito
   }
 
   @Override
-  public @Untainted @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
+  public @RUntainted @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.BaseOverrideForkPointAction.description");
   }
 

@@ -15,7 +15,7 @@ import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UI;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.frontend.actions.backgroundables.FetchBackgroundable;
 import com.virtuslab.gitmachete.frontend.actions.backgroundables.MergeCurrentBranchFastForwardOnlyBackgroundable;
@@ -30,7 +30,7 @@ public class FastForwardMerge {
 
   private final MergeProps mergeProps;
 
-  private final @Untainted String notificationTextPrefix;
+  private final @RUntainted String notificationTextPrefix;
 
   @ContinuesInBackground
   public void run() {

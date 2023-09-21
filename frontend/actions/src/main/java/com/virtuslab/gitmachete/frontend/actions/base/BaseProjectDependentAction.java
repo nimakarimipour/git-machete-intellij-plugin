@@ -12,7 +12,7 @@ import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import com.virtuslab.gitmachete.frontend.actions.common.SideEffectingActionTrackingService;
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle;
@@ -45,7 +45,7 @@ public abstract class BaseProjectDependentAction extends DumbAwareAction impleme
   protected abstract boolean isSideEffecting();
 
   @SuppressWarnings("tainting:return")
-  protected static @Nullable @Untainted String getOngoingSideEffectingActions(Project project) {
+  protected static @Nullable @RUntainted String getOngoingSideEffectingActions(Project project) {
     val actions = project.getService(SideEffectingActionTrackingService.class).getOngoingActions();
     if (actions.isEmpty()) {
       return null;
