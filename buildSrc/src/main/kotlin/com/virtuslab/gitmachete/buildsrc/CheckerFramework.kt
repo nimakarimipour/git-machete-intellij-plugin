@@ -69,12 +69,11 @@ fun Project.applyI18nFormatterAndTaintingCheckers() {
       listOf(
 //        "org.checkerframework.checker.i18nformatter.I18nFormatterChecker",
         "edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker",
-        "edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker",
       ),
     )
 //    extraJavacArgs.add("-Abundlenames=GitMacheteBundle")
     extraJavacArgs.add("-AannotatedPackages=com.virtuslab")
-    extraJavacArgs.add("-AenableLibraryCheck=false")
+    extraJavacArgs.add("-AenableLibraryCheck=true")
     extraJavacArgs.add("-AenableSideEffect=false")
   }
 

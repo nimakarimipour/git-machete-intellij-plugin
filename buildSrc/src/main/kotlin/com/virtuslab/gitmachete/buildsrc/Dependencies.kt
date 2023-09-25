@@ -125,6 +125,7 @@ fun Project.betterStrings(scopePrefix: String) {
 
 fun Project.checker() {
   checkerQual()
+  rTainting()
   dependencies {
     "checkerFramework"(lib("checker"))
   }

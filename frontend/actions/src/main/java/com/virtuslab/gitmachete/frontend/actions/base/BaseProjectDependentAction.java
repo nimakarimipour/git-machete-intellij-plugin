@@ -44,7 +44,7 @@ public abstract class BaseProjectDependentAction extends DumbAwareAction impleme
 
   protected abstract boolean isSideEffecting();
 
-  @SuppressWarnings("tainting:return")
+  @SuppressWarnings("ucrtainting:return")
   protected static @Nullable @RUntainted String getOngoingSideEffectingActions(Project project) {
     val actions = project.getService(SideEffectingActionTrackingService.class).getOngoingActions();
     if (actions.isEmpty()) {
