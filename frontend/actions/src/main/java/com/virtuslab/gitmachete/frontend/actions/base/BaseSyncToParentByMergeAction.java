@@ -7,7 +7,6 @@ import static org.checkerframework.checker.i18nformatter.qual.I18nConversionCate
 import java.util.Collections;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitReference;
 import git4idea.branch.GitBrancher;
 import git4idea.repo.GitRepository;
@@ -38,7 +37,7 @@ public abstract class BaseSyncToParentByMergeAction extends BaseGitMacheteReposi
   }
 
   @Override
-  public @RUntainted @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
+  public @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.BaseSyncToParentByMergeAction.description");
   }
 

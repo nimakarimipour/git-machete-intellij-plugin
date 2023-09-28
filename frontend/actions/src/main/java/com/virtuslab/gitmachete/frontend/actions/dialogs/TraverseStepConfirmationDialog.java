@@ -4,7 +4,6 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
@@ -26,7 +25,7 @@ public class TraverseStepConfirmationDialog {
     val yesAndQuitText = getNonHtmlString("action.GitMachete.BaseTraverseAction.dialog.yes-and-quit");
     val noText = getNonHtmlString("action.GitMachete.BaseTraverseAction.dialog.no");
     val quitText = getNonHtmlString("action.GitMachete.BaseTraverseAction.dialog.quit");
-    @RUntainted String[] options = {yesText, yesAndQuitText, noText, quitText};
+    String[] options = {yesText, yesAndQuitText, noText, quitText};
     int result = Messages.showDialog(project, message, title, options, /* defaultOptionIndex */ 0, Messages.getQuestionIcon());
 
     return switch (result) {

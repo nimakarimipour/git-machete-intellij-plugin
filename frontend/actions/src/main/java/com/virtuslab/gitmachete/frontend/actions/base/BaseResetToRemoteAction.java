@@ -13,7 +13,6 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.ui.MessageDialogBuilder;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.VcsNotifier;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitReference;
 import git4idea.repo.GitRepository;
 import io.vavr.collection.List;
@@ -60,7 +59,7 @@ public abstract class BaseResetToRemoteAction extends BaseGitMacheteRepositoryRe
   }
 
   @Override
-  public @RUntainted @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
+  public @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.BaseResetToRemoteAction.description.enabled");
   }
 

@@ -7,7 +7,6 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 import static org.checkerframework.checker.i18nformatter.qual.I18nConversionCategory.GENERAL;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import io.vavr.collection.List;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
@@ -26,7 +25,7 @@ public interface ISyncToRemoteStatusDependentAction extends IBranchNameProvider,
   }
 
   @I18nFormat({GENERAL, GENERAL})
-  default @RUntainted String getEnabledDescriptionFormat() {
+  default String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.ISyncToRemoteStatusDependentAction.description.enabled");
   }
 

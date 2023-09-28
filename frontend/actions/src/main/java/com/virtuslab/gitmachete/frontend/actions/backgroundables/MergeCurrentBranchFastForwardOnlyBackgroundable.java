@@ -2,7 +2,6 @@ package com.virtuslab.gitmachete.frontend.actions.backgroundables;
 
 import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getNonHtmlString;
 
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.commands.GitCommand;
 import git4idea.commands.GitLineHandler;
 import git4idea.repo.GitRepository;
@@ -39,7 +38,7 @@ public class MergeCurrentBranchFastForwardOnlyBackgroundable extends GitCommandU
   }
 
   @Override
-  protected @I18nFormat({}) @RUntainted String getOperationName() {
+  protected @I18nFormat({}) String getOperationName() {
     return getNonHtmlString("action.GitMachete.MergeCurrentBranchFastForwardOnlyBackgroundable.operation-name");
   }
 

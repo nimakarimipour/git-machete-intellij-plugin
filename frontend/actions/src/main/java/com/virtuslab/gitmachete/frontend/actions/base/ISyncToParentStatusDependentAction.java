@@ -7,7 +7,6 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 import static org.checkerframework.checker.i18nformatter.qual.I18nConversionCategory.GENERAL;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import io.vavr.collection.List;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
@@ -27,7 +26,7 @@ public interface ISyncToParentStatusDependentAction extends IBranchNameProvider,
    *         where {@code {1}} corresponds to branch name as returned by {@link #getNameOfBranchUnderAction}
    *         and {@code {0}} corresponds to name of its parent branch
    */
-  @RUntainted
+
   @I18nFormat({GENERAL, GENERAL})
   String getEnabledDescriptionFormat();
 

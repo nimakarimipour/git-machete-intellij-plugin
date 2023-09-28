@@ -6,7 +6,6 @@ import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.repo.GitRepository;
 import kr.pe.kwonnam.slf4jlambda.LambdaLogger;
 import lombok.experimental.ExtensionMethod;
@@ -45,7 +44,7 @@ public abstract class BaseProjectDependentAction extends DumbAwareAction impleme
   protected abstract boolean isSideEffecting();
 
   @SuppressWarnings("ucrtainting:return")
-  protected static @Nullable @RUntainted String getOngoingSideEffectingActions(Project project) {
+  protected static @Nullable String getOngoingSideEffectingActions(Project project) {
     val actions = project.getService(SideEffectingActionTrackingService.class).getOngoingActions();
     if (actions.isEmpty()) {
       return null;

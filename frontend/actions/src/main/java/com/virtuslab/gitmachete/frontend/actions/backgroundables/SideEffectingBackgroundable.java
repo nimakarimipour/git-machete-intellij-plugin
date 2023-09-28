@@ -3,7 +3,6 @@ package com.virtuslab.gitmachete.frontend.actions.backgroundables;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import lombok.val;
 
 import com.virtuslab.gitmachete.frontend.actions.common.SideEffectingActionTrackingService;
@@ -14,9 +13,9 @@ public abstract class SideEffectingBackgroundable extends Task.Backgroundable {
   // Task.Backgroundable already brings in a protected `myProject`, but it's @Nullable,
   // which forces unnecessary null checks to satisfy static analysis.
   protected final Project project;
-  private final @RUntainted String shortName;
+  private final String shortName;
 
-  public SideEffectingBackgroundable(Project project, @RUntainted String title, @RUntainted String shortName) {
+  public SideEffectingBackgroundable(Project project, String title, String shortName) {
     super(project, title);
     this.project = project;
     this.shortName = shortName;

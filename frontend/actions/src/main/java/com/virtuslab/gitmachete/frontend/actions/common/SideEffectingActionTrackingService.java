@@ -1,7 +1,6 @@
 package com.virtuslab.gitmachete.frontend.actions.common;
 
 import com.intellij.openapi.project.Project;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import io.vavr.collection.HashSet;
 import io.vavr.collection.Set;
 import lombok.Getter;
@@ -17,7 +16,7 @@ public final class SideEffectingActionTrackingService {
   public static class SideEffectiveActionId {
 
     @Getter
-    private final @RUntainted String name;
+    private final String name;
 
     @Override
     public String toString() {
@@ -29,7 +28,7 @@ public final class SideEffectingActionTrackingService {
 
   public SideEffectingActionTrackingService(Project project) {}
 
-  public synchronized SideEffectingActionClosable register(@RUntainted String id) {
+  public synchronized SideEffectingActionClosable register(String id) {
     val actionId = new SideEffectiveActionId(id);
     ongoingActions = ongoingActions.add(actionId);
     return new SideEffectingActionClosable(actionId);

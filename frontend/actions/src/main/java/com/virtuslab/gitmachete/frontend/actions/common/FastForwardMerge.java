@@ -7,7 +7,6 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 
 import java.util.Objects;
 
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitReference;
 import git4idea.repo.GitRepository;
 import io.vavr.control.Option;
@@ -30,7 +29,7 @@ public class FastForwardMerge {
 
   private final MergeProps mergeProps;
 
-  private final @RUntainted String notificationTextPrefix;
+  private final String notificationTextPrefix;
 
   @ContinuesInBackground
   public void run() {

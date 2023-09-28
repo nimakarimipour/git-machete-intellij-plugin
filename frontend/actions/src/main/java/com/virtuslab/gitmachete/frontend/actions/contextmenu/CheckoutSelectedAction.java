@@ -3,7 +3,6 @@ package com.virtuslab.gitmachete.frontend.actions.contextmenu;
 import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getNonHtmlString;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import kr.pe.kwonnam.slf4jlambda.LambdaLogger;
 import lombok.CustomLog;
 import lombok.experimental.ExtensionMethod;
@@ -31,7 +30,7 @@ public class CheckoutSelectedAction extends BaseCheckoutAction
   }
 
   @Override
-  protected @RUntainted String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
+  protected String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
     return getNonHtmlString("action.GitMachete.CheckoutSelectedAction.undefined.branch-name");
   }
 }

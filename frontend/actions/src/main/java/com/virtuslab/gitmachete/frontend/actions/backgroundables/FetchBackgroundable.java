@@ -2,7 +2,6 @@ package com.virtuslab.gitmachete.frontend.actions.backgroundables;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.VcsNotifier;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitUtil;
 import git4idea.fetch.GitFetchSupport;
 import git4idea.repo.GitRemote;
@@ -20,7 +19,7 @@ public class FetchBackgroundable extends SideEffectingBackgroundable {
   private final GitRepository gitRepository;
   private final String remoteName;
   private final @Nullable String refspec;
-  private final @RUntainted String failureNotificationText;
+  private final String failureNotificationText;
   private final String successNotificationText;
 
   /** Use as {@code remoteName} when referring to the local repository. */
@@ -30,8 +29,8 @@ public class FetchBackgroundable extends SideEffectingBackgroundable {
       GitRepository gitRepository,
       String remoteName,
       @Nullable String refspec,
-      @RUntainted String taskTitle,
-      @RUntainted String failureNotificationText,
+      String taskTitle,
+      String failureNotificationText,
       String successNotificationText) {
     super(gitRepository.getProject(), taskTitle, "fetch");
     this.gitRepository = gitRepository;

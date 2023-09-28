@@ -5,7 +5,6 @@ import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle
 import java.util.Collections;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.branch.GitBrancher;
 import lombok.experimental.ExtensionMethod;
 import lombok.val;
@@ -28,7 +27,7 @@ public abstract class BaseCheckoutAction extends BaseGitMacheteRepositoryReadyAc
 
   protected abstract @Nullable String getTargetBranchName(AnActionEvent anActionEvent);
 
-  protected abstract @RUntainted String getNonExistentBranchMessage(AnActionEvent anActionEvent);
+  protected abstract String getNonExistentBranchMessage(AnActionEvent anActionEvent);
 
   @Override
   @UIEffect

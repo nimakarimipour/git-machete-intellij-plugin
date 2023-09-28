@@ -23,7 +23,6 @@ import com.intellij.openapi.vcs.update.UpdatedFiles;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.util.ModalityUiUtil;
 import com.intellij.vcs.ViewUpdateInfoNotification;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import git4idea.GitBranch;
 import git4idea.GitRevisionNumber;
 import git4idea.GitVcs;
@@ -55,15 +54,15 @@ public abstract class GitCommandUpdatingCurrentBranchBackgroundable extends Side
 
   public GitCommandUpdatingCurrentBranchBackgroundable(
       GitRepository gitRepository,
-      @RUntainted String taskTitle,
-      @RUntainted String shortName) {
+      String taskTitle,
+      String shortName) {
     super(gitRepository.getProject(), taskTitle, shortName);
     this.gitRepository = gitRepository;
   }
 
   protected abstract LambdaLogger log();
 
-  protected abstract @RUntainted @I18nFormat({}) String getOperationName();
+  protected abstract @I18nFormat({}) String getOperationName();
 
   protected abstract String getTargetBranchName();
 

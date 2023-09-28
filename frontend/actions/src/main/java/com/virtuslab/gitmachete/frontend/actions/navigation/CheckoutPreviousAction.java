@@ -3,7 +3,6 @@ package com.virtuslab.gitmachete.frontend.actions.navigation;
 import static com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getNonHtmlString;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import kr.pe.kwonnam.slf4jlambda.LambdaLogger;
 import lombok.CustomLog;
 import lombok.experimental.ExtensionMethod;
@@ -21,7 +20,7 @@ public class CheckoutPreviousAction extends BaseCheckoutAction
       IExpectsKeySelectedBranchName {
 
   @Override
-  protected @RUntainted String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
+  protected String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
     val currentBranchName = getCurrentBranchNameIfManaged(anActionEvent);
     return currentBranchName != null
         ? getNonHtmlString("action.GitMachete.CheckoutPreviousAction.undefined.branch-name").fmt(currentBranchName)
