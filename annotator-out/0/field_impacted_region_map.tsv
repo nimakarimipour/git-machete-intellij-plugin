@@ -1,0 +1,5 @@
+REGION_CLASS	REGION_MEMBER	USED_MEMBER	USED_CLASS	SOURCE_TYPE
+com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeyGitMacheteRepository	getGitMacheteRepositorySnapshot(com.intellij.openapi.actionSystem.AnActionEvent)	GIT_MACHETE_REPOSITORY_SNAPSHOT	com.virtuslab.gitmachete.frontend.datakeys.DataKeys	SOURCE
+com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeyUnmanagedBranchName	getNameOfUnmanagedBranch(com.intellij.openapi.actionSystem.AnActionEvent)	UNMANAGED_BRANCH_NAME	com.virtuslab.gitmachete.frontend.datakeys.DataKeys	SOURCE
+com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName	getSelectedBranchName(com.intellij.openapi.actionSystem.AnActionEvent)	SELECTED_BRANCH_NAME	com.virtuslab.gitmachete.frontend.datakeys.DataKeys	SOURCE
+com.virtuslab.gitmachete.frontend.actions.navigation.CheckoutParentAction	null	class	com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle	SOURCE

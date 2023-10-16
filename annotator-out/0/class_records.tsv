@@ -1,0 +1,6 @@
+class	path
+com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeyGitMacheteRepository	/home/nima/Developer/taint-benchmarks/git-machete-intellij-plugin/frontend/actions/src/main/java/com/virtuslab/gitmachete/frontend/actions/expectedkeys/IExpectsKeyGitMacheteRepository.java
+com.virtuslab.gitmachete.frontend.actions.base.IWithLogger	/home/nima/Developer/taint-benchmarks/git-machete-intellij-plugin/frontend/actions/src/main/java/com/virtuslab/gitmachete/frontend/actions/base/IWithLogger.java
+com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeyUnmanagedBranchName	/home/nima/Developer/taint-benchmarks/git-machete-intellij-plugin/frontend/actions/src/main/java/com/virtuslab/gitmachete/frontend/actions/expectedkeys/IExpectsKeyUnmanagedBranchName.java
+com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName	/home/nima/Developer/taint-benchmarks/git-machete-intellij-plugin/frontend/actions/src/main/java/com/virtuslab/gitmachete/frontend/actions/expectedkeys/IExpectsKeySelectedBranchName.java
+com.virtuslab.gitmachete.frontend.actions.navigation.CheckoutParentAction	/home/nima/Developer/taint-benchmarks/git-machete-intellij-plugin/frontend/actions/src/main/java/com/virtuslab/gitmachete/frontend/actions/navigation/CheckoutParentAction.java
