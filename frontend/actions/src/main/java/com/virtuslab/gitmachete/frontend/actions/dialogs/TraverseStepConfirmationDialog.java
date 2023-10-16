@@ -7,7 +7,6 @@ import com.intellij.openapi.ui.Messages;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 @RequiredArgsConstructor
 public class TraverseStepConfirmationDialog {
@@ -26,7 +25,7 @@ public class TraverseStepConfirmationDialog {
     val yesAndQuitText = getNonHtmlString("action.GitMachete.BaseTraverseAction.dialog.yes-and-quit");
     val noText = getNonHtmlString("action.GitMachete.BaseTraverseAction.dialog.no");
     val quitText = getNonHtmlString("action.GitMachete.BaseTraverseAction.dialog.quit");
-    @Untainted String[] options = {yesText, yesAndQuitText, noText, quitText};
+    String[] options = {yesText, yesAndQuitText, noText, quitText};
     int result = Messages.showDialog(project, message, title, options, /* defaultOptionIndex */ 0, Messages.getQuestionIcon());
 
     return switch (result) {

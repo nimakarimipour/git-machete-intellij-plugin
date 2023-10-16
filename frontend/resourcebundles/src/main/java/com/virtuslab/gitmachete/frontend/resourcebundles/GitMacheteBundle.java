@@ -6,8 +6,6 @@ import java.util.ResourceBundle;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormatFor;
 import org.checkerframework.checker.i18nformatter.qual.I18nMakeFormat;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.PolyTainted;
-import org.checkerframework.checker.tainting.qual.Untainted;
 import org.checkerframework.common.value.qual.MinLen;
 import org.jetbrains.annotations.PropertyKey;
 
@@ -31,7 +29,7 @@ public final class GitMacheteBundle {
    *             but each parameter must be a non-null {@link String} and not just a nullable {@link Object}
    * @return the formatted string
    */
-  public static @PolyTainted String fmt(@PolyTainted @I18nFormatFor("#2") String format, String @MinLen(1)... args) {
+  public static String fmt(@I18nFormatFor("#2") String format, String @MinLen(1)... args) {
     return MessageFormat.format(format, (@Nullable Object[]) args);
   }
 
@@ -41,7 +39,7 @@ public final class GitMacheteBundle {
   }
 
   @I18nMakeFormat
-  public static @Untainted String getNonHtmlString(@PropertyKey(resourceBundle = BUNDLE) String key) {
+  public static String getNonHtmlString(@PropertyKey(resourceBundle = BUNDLE) String key) {
     return instance.getString(key);
   }
 }

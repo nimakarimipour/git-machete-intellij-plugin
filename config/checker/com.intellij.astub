@@ -10,8 +10,8 @@ import org.checkerframework.checker.index.qual.NonNegative;
 import org.checkerframework.checker.initialization.qual.UnknownInitialization;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Tainted;
-import org.checkerframework.checker.tainting.qual.Untainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 
 @UIPackage package com.intellij.application.options;
@@ -135,7 +135,7 @@ class DataManager {
 package com.intellij.lang.annotation;
 
 interface AnnotationHolder {
-  default AnnotationBuilder newAnnotation( HighlightSeverity severity, @Untainted String message);
+  default AnnotationBuilder newAnnotation( HighlightSeverity severity, @RUntainted String message);
 }
 
 
@@ -152,9 +152,9 @@ class NotificationAction {
 }
 
 class NotificationGroup {
-  Notification createNotification(@Tainted String title, @Tainted String content, NotificationType type, @Nullable NotificationListener listener);
+  Notification createNotification(@RTainted String title, @RTainted String content, NotificationType type, @Nullable NotificationListener listener);
 
-  Notification createNotification(@Tainted String title, @Tainted String content, NotificationType type);
+  Notification createNotification(@RTainted String title, @RTainted String content, NotificationType type);
 }
 
 
@@ -164,7 +164,7 @@ class NotificationGroup {
 @UIPackage package com.intellij.openapi.actionSystem;
 
 class Presentation {
-  void setDescription(@Untainted String description);
+  void setDescription(@RUntainted String description);
 
   @SafeEffect
   String getTextWithMnemonic();
@@ -289,7 +289,7 @@ interface Scheme {
 package com.intellij.openapi.progress;
 
 interface ProgressIndicator {
-  void setText(@Untainted String text);
+  void setText(@RUntainted String text);
 }
 
 class Task {
@@ -306,7 +306,7 @@ class Task {
   void onSuccess();
 
   class Backgroundable  {
-    Backgroundable(Project project, @Untainted String title);
+    Backgroundable(Project project, @RUntainted String title);
   }
 }
 
@@ -334,32 +334,32 @@ class DialogWrapper {
   // `this` in the below method is @UnknownInitialization since this methods is called from DialogWrapper's c'tor
   @Nullable javax.swing.JRootPane getRootPane(@UnknownInitialization DialogWrapper this);
 
-  void setOKButtonText(@Tainted String text);
+  void setOKButtonText(@RTainted String text);
 }
 
 class MessageDialogBuilder<T extends MessageDialogBuilder> {
   @SafeEffect
-  static OkCancelDialogBuilder okCancel(@Tainted String title, @Tainted String message);
+  static OkCancelDialogBuilder okCancel(@RTainted String title, @RTainted String message);
 
   @SafeEffect
-  static YesNo yesNo(@Tainted String title, @Tainted String message);
+  static YesNo yesNo(@RTainted String title, @RTainted String message);
 
   @SafeEffect
-  static YesNoCancel yesNoCancel(@Tainted String title, @Tainted String message);
+  static YesNoCancel yesNoCancel(@RTainted String title, @RTainted String message);
 
   class YesNoCancel {
-    YesNoCancel cancelText(@Untainted String cancelText);
+    YesNoCancel cancelText(@RUntainted String cancelText);
   }
 }
 
 class MessageUtil {
-  int showOkCancelDialog(@Tainted String title, @Tainted String message, @Untainted String okText, @Untainted String cancelText,
+  int showOkCancelDialog(@RTainted String title, @RTainted String message, @RUntainted String okText, @RUntainted String cancelText,
                          Icon icon, DoNotAskOption doNotAskOption, Project project);
 }
 
 class Messages {
-  static int showDialog(Project project, @Tainted String message, @Tainted String title,
-                        @Untainted String [] options, int defaultOptionIndex, Icon icon);
+  static int showDialog(Project project, @RTainted String message, @RTainted String title,
+                        @RUntainted String [] options, int defaultOptionIndex, Icon icon);
 }
 
 
@@ -378,11 +378,11 @@ package com.intellij.openapi.vcs;
 // Experimentally verified that these methods can be called from outside UI thread.
 @AlwaysSafe
 class VcsNotifier {
-  Notification notifyError(@Nullable String displayId, @Tainted String title, @Tainted String message);
-  Notification notifySuccess(@Nullable String displayId, @Tainted String title, @Tainted String message);
-  Notification notifyWeakError(@Nullable String displayId, @Tainted String title, @Tainted String message);
-  Notification notifyWarning(@Nullable String displayId, @Tainted String title, @Tainted String message);
-  Notification notifyInfo(@Nullable String displayId, @Tainted String title, @Tainted String message);
+  Notification notifyError(@Nullable String displayId, @RTainted String title, @RTainted String message);
+  Notification notifySuccess(@Nullable String displayId, @RTainted String title, @RTainted String message);
+  Notification notifyWeakError(@Nullable String displayId, @RTainted String title, @RTainted String message);
+  Notification notifyWarning(@Nullable String displayId, @RTainted String title, @RTainted String message);
+  Notification notifyInfo(@Nullable String displayId, @RTainted String title, @RTainted String message);
 }
 
 

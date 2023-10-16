@@ -9,7 +9,6 @@ import io.vavr.collection.List;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.gitmachete.backend.api.SyncToParentStatus;
 import com.virtuslab.gitmachete.frontend.actions.common.FastForwardMerge;
@@ -32,7 +31,7 @@ public abstract class BaseFastForwardMergeToParentAction extends BaseGitMacheteR
   }
 
   @Override
-  public @Untainted @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
+  public @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.BaseFastForwardMergeToParentAction.description");
   }
 

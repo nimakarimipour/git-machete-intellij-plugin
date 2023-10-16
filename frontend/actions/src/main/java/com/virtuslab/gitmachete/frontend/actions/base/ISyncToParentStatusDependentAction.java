@@ -11,7 +11,6 @@ import io.vavr.collection.List;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.gitmachete.backend.api.SyncToParentStatus;
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeyGitMacheteRepository;
@@ -27,7 +26,7 @@ public interface ISyncToParentStatusDependentAction extends IBranchNameProvider,
    *         where {@code {1}} corresponds to branch name as returned by {@link #getNameOfBranchUnderAction}
    *         and {@code {0}} corresponds to name of its parent branch
    */
-  @Untainted
+
   @I18nFormat({GENERAL, GENERAL})
   String getEnabledDescriptionFormat();
 

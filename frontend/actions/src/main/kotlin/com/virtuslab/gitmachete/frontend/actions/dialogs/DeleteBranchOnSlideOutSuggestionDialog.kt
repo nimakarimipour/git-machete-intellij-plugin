@@ -9,7 +9,6 @@ import com.virtuslab.gitmachete.frontend.defs.GitConfigKeys.DELETE_LOCAL_BRANCH_
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.fmt
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle.getString
 import org.apache.commons.text.StringEscapeUtils
-import org.checkerframework.checker.tainting.qual.Untainted
 import java.awt.event.KeyEvent
 import javax.swing.Action
 import javax.swing.JComponent
@@ -18,7 +17,7 @@ data class SlideOutOptions(
   @get:JvmName("shouldRemember") val remember: Boolean = false,
   @get:JvmName("shouldDelete") val delete: Boolean = false,
 )
-class DeleteBranchOnSlideOutSuggestionDialog(project: Project, private val branchName: @Untainted String) :
+class DeleteBranchOnSlideOutSuggestionDialog(project: Project, private val branchName: String) :
   DialogWrapper(project, /* canBeParent */ true) {
 
   private var remember = false

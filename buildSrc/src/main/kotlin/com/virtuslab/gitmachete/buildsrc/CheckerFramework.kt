@@ -67,17 +67,25 @@ fun Project.applyI18nFormatterAndTaintingCheckers() {
   configure<CheckerFrameworkExtension> {
     checkers.addAll(
       listOf(
-        "org.checkerframework.checker.i18nformatter.I18nFormatterChecker",
-        "org.checkerframework.checker.tainting.TaintingChecker",
+//        "org.checkerframework.checker.i18nformatter.I18nFormatterChecker",
+        "edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker",
       ),
     )
-    extraJavacArgs.add("-Abundlenames=GitMacheteBundle")
+//    extraJavacArgs.add("-Abundlenames=GitMacheteBundle")
+    extraJavacArgs.add("-AannotatedPackages=com.virtuslab")
+    extraJavacArgs.add("-AenableLibraryCheck=true")
+    extraJavacArgs.add("-AenableSideEffect=false")
   }
 
   // Apparently, I18nFormatterChecker doesn't see resource bundles in its classpath unless they're
   // defined in a separate module.
   dependencies {
     "checkerFramework"(project(":frontend:resourcebundles"))
+    add("compileOnly", "org.checkerframework:checker-qual:3.37.0")
+    add("checkerFramework", "org.checkerframework:checker:3.37.0")
+
+    add("compileOnly", "edu.ucr.cs.riple.taint:ucrtainting-checker-qual:0.1")
+    add("annotationProcessor", "edu.ucr.cs.riple.taint:ucrtainting-checker:0.1")
   }
 }
 

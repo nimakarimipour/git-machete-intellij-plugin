@@ -10,7 +10,6 @@ import lombok.CustomLog;
 import lombok.val;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.gitmachete.backend.api.IBranchReference;
 import com.virtuslab.qual.guieffect.UIThreadUnsafe;
@@ -39,7 +38,7 @@ public class MergeCurrentBranchFastForwardOnlyBackgroundable extends GitCommandU
   }
 
   @Override
-  protected @I18nFormat({}) @Untainted String getOperationName() {
+  protected @I18nFormat({}) String getOperationName() {
     return getNonHtmlString("action.GitMachete.MergeCurrentBranchFastForwardOnlyBackgroundable.operation-name");
   }
 

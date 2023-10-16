@@ -22,7 +22,6 @@ import lombok.val;
 import org.apache.commons.text.StringEscapeUtils;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.i18nformatter.qual.I18nFormat;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.gitmachete.backend.api.ILocalBranchReference;
 import com.virtuslab.gitmachete.backend.api.IRemoteTrackingBranchReference;
@@ -60,7 +59,7 @@ public abstract class BaseResetToRemoteAction extends BaseGitMacheteRepositoryRe
   }
 
   @Override
-  public @Untainted @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
+  public @I18nFormat({GENERAL, GENERAL}) String getEnabledDescriptionFormat() {
     return getNonHtmlString("action.GitMachete.BaseResetToRemoteAction.description.enabled");
   }
 

@@ -10,7 +10,6 @@ import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName;
 import com.virtuslab.gitmachete.frontend.resourcebundles.GitMacheteBundle;
@@ -28,7 +27,7 @@ public abstract class BaseCheckoutAction extends BaseGitMacheteRepositoryReadyAc
 
   protected abstract @Nullable String getTargetBranchName(AnActionEvent anActionEvent);
 
-  protected abstract @Untainted String getNonExistentBranchMessage(AnActionEvent anActionEvent);
+  protected abstract String getNonExistentBranchMessage(AnActionEvent anActionEvent);
 
   @Override
   @UIEffect

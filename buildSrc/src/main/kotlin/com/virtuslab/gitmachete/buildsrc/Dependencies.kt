@@ -125,6 +125,7 @@ fun Project.betterStrings(scopePrefix: String) {
 
 fun Project.checker() {
   checkerQual()
+  rTainting()
   dependencies {
     "checkerFramework"(lib("checker"))
   }
@@ -172,6 +173,15 @@ fun Project.jgit(scopePrefix: String = "") {
 fun Project.junitApi(scopePrefix: String) {
   dependencies {
     (scopePrefix camelConcat "implementation")(lib("junit-api"))
+  }
+}
+
+fun Project.rTainting() {
+  dependencies {
+    add("compileOnly", "org.checkerframework:checker-qual:3.37.0")
+    add("checkerFramework", "org.checkerframework:checker:3.37.0")
+    add("compileOnly", "edu.ucr.cs.riple.taint:ucrtainting-checker-qual:0.1")
+    add("annotationProcessor", "edu.ucr.cs.riple.taint:ucrtainting-checker:0.1")
   }
 }
 

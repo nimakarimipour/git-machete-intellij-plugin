@@ -8,7 +8,6 @@ import lombok.CustomLog;
 import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.gitmachete.frontend.actions.base.BaseCheckoutAction;
 import com.virtuslab.gitmachete.frontend.actions.expectedkeys.IExpectsKeySelectedBranchName;
@@ -21,7 +20,7 @@ public class CheckoutNextAction extends BaseCheckoutAction
       IExpectsKeySelectedBranchName {
 
   @Override
-  protected @Untainted String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
+  protected String getNonExistentBranchMessage(AnActionEvent anActionEvent) {
     val currentBranchName = getCurrentBranchNameIfManaged(anActionEvent);
     return currentBranchName != null
         ? getNonHtmlString("action.GitMachete.CheckoutNextAction.undefined.branch-name").fmt(currentBranchName)

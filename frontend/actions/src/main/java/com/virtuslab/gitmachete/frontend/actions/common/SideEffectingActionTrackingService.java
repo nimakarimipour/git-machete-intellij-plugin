@@ -6,7 +6,6 @@ import io.vavr.collection.Set;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 @SuppressWarnings("regexp") // to allow for `synchronized`
 public final class SideEffectingActionTrackingService {
@@ -17,7 +16,7 @@ public final class SideEffectingActionTrackingService {
   public static class SideEffectiveActionId {
 
     @Getter
-    private final @Untainted String name;
+    private final String name;
 
     @Override
     public String toString() {
@@ -29,7 +28,7 @@ public final class SideEffectingActionTrackingService {
 
   public SideEffectingActionTrackingService(Project project) {}
 
-  public synchronized SideEffectingActionClosable register(@Untainted String id) {
+  public synchronized SideEffectingActionClosable register(String id) {
     val actionId = new SideEffectiveActionId(id);
     ongoingActions = ongoingActions.add(actionId);
     return new SideEffectingActionClosable(actionId);
