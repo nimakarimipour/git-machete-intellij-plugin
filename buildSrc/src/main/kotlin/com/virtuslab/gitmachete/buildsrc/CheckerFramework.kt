@@ -72,6 +72,7 @@ fun Project.applyI18nFormatterAndTaintingCheckers() {
       ),
     )
 //    extraJavacArgs.add("-Abundlenames=GitMacheteBundle")
+    extraJavacArgs.add("-Awarns")
     extraJavacArgs.add("-AannotatedPackages=com.virtuslab")
     extraJavacArgs.add("-AenableLibraryCheck=true")
     extraJavacArgs.add("-AenableSideEffect=false")

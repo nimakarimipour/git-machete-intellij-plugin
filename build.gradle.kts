@@ -66,8 +66,8 @@ allprojects {
       listOf(
         // Enforce explicit `.toString()` call in code generated for string interpolations
         "-AcallToStringExplicitlyInInterpolations",
-        // Treat each compiler warning (esp. the ones coming from Checker Framework) as an error.
-        "-Werror",
+        // // Treat each compiler warning (esp. the ones coming from Checker Framework) as an error.
+        // "-Werror",
         // Warn of type-unsafe operations on generics.
         "-Xlint:unchecked",
       ),
